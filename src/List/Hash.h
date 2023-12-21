@@ -2,8 +2,8 @@
 // Created by Olcay Taner YILDIZ on 18.04.2023.
 //
 
-#ifndef GRAPH_PUZZLE_GAME_SUDEBZKRT_HASH_H
-#define GRAPH_PUZZLE_GAME_SUDEBZKRT_HASH_H
+#ifndef DATASTRUCTURES_CPP_HASH_H
+#define DATASTRUCTURES_CPP_HASH_H
 
 
 #include "LinkedList.h"
@@ -24,4 +24,4 @@ namespace list {
     };
 
 }
-#endif //GRAPH_PUZZLE_GAME_SUDEBZKRT_HASH_H
+#endif //DATASTRUCTURES_CPP_HASH_H

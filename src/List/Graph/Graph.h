@@ -2,8 +2,8 @@
 // Created by Olcay Taner YILDIZ on 8.05.2023.
 //
 
-#ifndef GRAPH_PUZZLE_GAME_SUDEBZKRT_GRAPH_H
-#define GRAPH_PUZZLE_GAME_SUDEBZKRT_GRAPH_H
+#ifndef DATASTRUCTURES_CPP_GRAPH_H
+#define DATASTRUCTURES_CPP_GRAPH_H
 
 
 #include "EdgeList.h"
@@ -30,4 +30,4 @@ namespace list {
     };
 
 }
-#endif //GRAPH_PUZZLE_GAME_SUDEBZKRT_GRAPH_H
+#endif //DATASTRUCTURES_CPP_GRAPH_H

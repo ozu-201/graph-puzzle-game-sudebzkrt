@@ -2,8 +2,8 @@
 // Created by Olcay Taner YILDIZ on 6.03.2023.
 //
 
-#ifndef GRAPH_PUZZLE_GAME_SUDEBZKRT_NODE_H
-#define GRAPH_PUZZLE_GAME_SUDEBZKRT_NODE_H
+#ifndef DATASTRUCTURES_CPP_NODE_H
+#define DATASTRUCTURES_CPP_NODE_H
 #include <string>
 
 using namespace  std;
@@ -21,4 +21,4 @@ public:
 };
 
 
-#endif //GRAPH_PUZZLE_GAME_SUDEBZKRT_NODE_H
+#endif //DATASTRUCTURES_CPP_NODE_H

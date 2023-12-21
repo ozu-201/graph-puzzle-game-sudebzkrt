@@ -2,8 +2,8 @@
 // Created by Olcay Taner YILDIZ on 27.03.2023.
 //
 
-#ifndef GRAPH_PUZZLE_GAME_SUDEBZKRT_QUEUE_H
-#define GRAPH_PUZZLE_GAME_SUDEBZKRT_QUEUE_H
+#ifndef DATASTRUCTURES_CPP_QUEUE_H
+#define DATASTRUCTURES_CPP_QUEUE_H
 
 #include "Node.h"
 
@@ -22,4 +22,4 @@ namespace list {
     };
 
 }
-#endif //GRAPH_PUZZLE_GAME_SUDEBZKRT_QUEUE_H
+#endif //DATASTRUCTURES_CPP_QUEUE_H

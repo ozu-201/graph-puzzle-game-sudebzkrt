@@ -2,8 +2,8 @@
 // Created by Olcay Taner YILDIZ on 8.05.2023.
 //
 
-#ifndef GRAPH_PUZZLE_GAME_SUDEBZKRT_EDGE_H
-#define GRAPH_PUZZLE_GAME_SUDEBZKRT_EDGE_H
+#ifndef DATASTRUCTURES_CPP_EDGE_H
+#define DATASTRUCTURES_CPP_EDGE_H
 
 
 class Edge {
@@ -23,4 +23,4 @@ public:
 };
 
 
-#endif //GRAPH_PUZZLE_GAME_SUDEBZKRT_EDGE_H
+#endif //DATASTRUCTURES_CPP_EDGE_H
