@@ -179,6 +179,120 @@ namespace array{
                 }
             }
         }
-    }
+        void Graph::findShortestPath(std::vector<std::string>& words, const string& start, const string& target) {
 
-}
+            int start_index = -1, target_index = -1;
+            for (int i = 0; i < words.size(); ++i) {
+                if (words[i] == start) start_index = i;
+                if (words[i] == target) target_index = i;
+            }
+
+            if (start_index == -1 || target_index == -1) {
+                std::cout << "Start or target word not found." << std::endl;
+                return;
+            }
+
+
+            std::vector<bool> visited(words.size(), false);
+            std::vector<int> parent(words.size(), -1);
+            std::queue<int> queue;
+
+            visited[start_index] = true;
+            queue.push(start_index);
+
+            while (!queue.empty()) {
+                int current = queue.front();
+                queue.pop();
+
+                if (current == target_index) break;
+
+
+                for (int i = 0; i < words.size(); ++i) {
+                    if (!visited[i] && edges[current][i] == 1) {
+                        visited[i] = true;
+                        parent[i] = current;
+                        queue.push(i);
+                    }
+                }
+            }
+
+
+            if (!visited[target_index]) {
+                std::cout << "No path exists between " << start << " and " << target << std::endl;
+                return;
+            }
+
+            std::vector<int> path;
+            for (int at = target_index; at != -1; at = parent[at]) {
+                path.push_back(at);
+            }
+            reverse(path.begin(), path.end());
+
+            std::cout << "Shortest path from " << start << " to " << target << ": ";
+            for (int i = 0; i < path.size(); i++) {
+                std::cout << words[path[i]];
+                if (i < path.size() - 1) std::cout << " -> ";
+            }
+            std::cout << std::endl;
+        }
+
+
+    }
+    class Graph {
+    private:
+        int vertexCount;
+        std::vector<std::vector<int>> edges;
+
+    public:
+
+        void setEdgeWeights() {
+            for (int i = 0; i < vertexCount; ++i) {
+                for (int j = 0; j < vertexCount; ++j) {
+                    if (edges[i][j] > 0) {
+                        edges[i][j] = 1;
+                    }
+                }
+            }
+        }
+
+
+        void dijkstra(int start_index, std::vector<int>& distance, std::vector<int>& parent) {
+            std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
+
+            distance[start_index] = 0;
+            pq.push({0, start_index});
+
+            while (!pq.empty()) {
+                int u = pq.top().second;
+                pq.pop();
+
+                for (int v = 0; v < vertexCount; ++v) {
+                    int weight = edges[u][v];
+                    if (weight > 0 && distance[v] > distance[u] + weight) {
+                        distance[v] = distance[u] + weight;
+                        parent[v] = u;
+                        pq.push({distance[v], v});
+                    }
+                }
+            }
+        }
+
+
+        void printShortestPath(std::vector<std::string>& words, int start_index, int target_index) {
+            std::cout << "Shortest path from " << words[start_index] << " to " << words[target_index] << ": ";
+            std::vector<int> path;
+            for (int v = target_index; v != -1; v = parent[v]) {
+                path.push_back(v);
+            }
+            for (int i = path.size() - 1; i >= 0; --i) {
+                std::cout << words[path[i]];
+                if (i > 0) std::cout << " <-- ";
+            }
+            std::cout << std::endl;
+        }
+    };
+
+
+
+
+
